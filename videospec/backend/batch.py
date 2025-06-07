@@ -1,0 +1,1 @@
+# Video overlay worker (placeholder)

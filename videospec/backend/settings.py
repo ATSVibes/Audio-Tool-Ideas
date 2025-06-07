@@ -1,0 +1,1 @@
+# Pydantic-based config (placeholder)
