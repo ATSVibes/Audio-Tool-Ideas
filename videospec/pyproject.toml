@@ -3,3 +3,7 @@ name = "videospec"
 version = "0.1.0"
 description = "EasyRun Video Spectrum Analyzer"
 authors = ["Andrew <andrew@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+httpx = "^0.26"
