@@ -29,6 +29,7 @@ async def audio_frames(
     q: asyncio.Queue[np.ndarray] = asyncio.Queue()
 
     if sd is not None:
+
         def callback(indata, frames, time_info, status):
             if status:
                 print("Audio status", status)
