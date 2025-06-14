@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Poetry
+        run: pipx install poetry
+
+      - name: Install Python dependencies
+        run: poetry install --no-interaction --no-root
+        working-directory: videospec
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install Node dependencies
+        if: ${{ hashFiles('videospec/ui/package.json') != '' }}
+        run: npm install
+        working-directory: videospec/ui
+
+      - name: Run pre-commit
+        run: poetry run pre-commit run --all-files --color always --show-diff-on-failure
+        working-directory: videospec
+
+      - name: Run tests
+        run: poetry run pytest
+        working-directory: videospec
