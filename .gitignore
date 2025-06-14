@@ -1,0 +1,10 @@
+# Node
+videospec/ui/node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Build
+videospec/ui/dist/
