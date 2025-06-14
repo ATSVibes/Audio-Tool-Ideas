@@ -24,3 +24,10 @@ The frontend code lives in `videospec/ui`. Install its Node packages by running:
 cd videospec/ui
 npm install
 ```
+
+When a `package-lock.json` file is present, use `npm ci` for faster
+and reproducible installs:
+
+```bash
+npm ci
+```

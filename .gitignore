@@ -1,0 +1,14 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# Node modules
+node_modules/
+videospec/ui/node_modules/
+
+# Editor directories
+.DS_Store
